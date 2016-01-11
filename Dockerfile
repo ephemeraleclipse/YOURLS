@@ -2,8 +2,8 @@ FROM php:7.0.2-fpm
 RUN apt-get update
 RUN apt-get upgrade -y
 COPY . /var/www/html/
-ls -al /var/www/html
-ls -al /var/www/html/user
+RUN ls -al /var/www/html
+RUN ls -al /var/www/html/user
 COPY /var/www/html/user/config-sample.php /var/www/html/user/config.php
 RUN sed -i 's/your db user name/root/' /var/www/html/user/config.php
 RUN sed -i 's/\'your db password\'/getenv(\'DB_PASSWORD\')/' /var/www/html/user/config.php
