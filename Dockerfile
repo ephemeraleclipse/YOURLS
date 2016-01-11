@@ -1,4 +1,4 @@
-FROM 7.0.2-fpm
+FROM php:7.0.2-fpm
 RUN apt-get update
 RUN apt-get upgrade -y
 COPY . /var/www/html/
