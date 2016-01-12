@@ -1,6 +1,7 @@
 FROM php:7.0.2-apache
 RUN apt-get update
 RUN apt-get upgrade -y
+RUN apt-get install php5-mysql -y
 COPY . /var/www/html/
 COPY user/config-sample.php /var/www/html/user/config.php
 RUN sed -i "s/your db user name/root/" /var/www/html/user/config.php
