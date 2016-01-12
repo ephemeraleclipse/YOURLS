@@ -8,5 +8,5 @@ RUN sed -i "s/'your db password'/getenv('DB_PASSWORD')/" /var/www/html/user/conf
 RUN sed -i "s|'http://your-own-domain-here.com'|getenv('VIRTUAL_HOST')|" /var/www/html/user/config.php
 RUN sed -i "s/'username'/getenv('USERNAME')/" /var/www/html/user/config.php
 RUN sed -i "s/'password'/getenv('PASSWORD')/" /var/www/html/user/config.php
-RUN sed -i "s/'localhost'/getenv('DB_HOST')" /var/www/html/user/config.php
+RUN sed -i "s/'localhost'/getenv('DB_HOST')/" /var/www/html/user/config.php
 EXPOSE 9000
