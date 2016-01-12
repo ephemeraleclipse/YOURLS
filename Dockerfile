@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y \
         libmcrypt-dev \
         libpng12-dev \
     && docker-php-ext-install mysqli
+RUN a2enmod rewrite
 COPY . /var/www/html/
 COPY user/config-sample.php /var/www/html/user/config.php
 RUN sed -i "s/your db user name/root/" /var/www/html/user/config.php
