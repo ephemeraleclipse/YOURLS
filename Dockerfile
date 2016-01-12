@@ -1,4 +1,4 @@
-FROM php:7.0.2-fpm
+FROM php:7.0.2-apache
 RUN apt-get update
 RUN apt-get upgrade -y
 COPY . /var/www/html/
@@ -9,4 +9,4 @@ RUN sed -i "s|'http://your-own-domain-here.com'|getenv('HOST')|" /var/www/html/u
 RUN sed -i "s/'username'/getenv('USERNAME')/" /var/www/html/user/config.php
 RUN sed -i "s/'password'/getenv('PASSWORD')/" /var/www/html/user/config.php
 RUN sed -i "s/'localhost'/getenv('DB_HOST')/" /var/www/html/user/config.php
-EXPOSE 9000
+EXPOSE 80
